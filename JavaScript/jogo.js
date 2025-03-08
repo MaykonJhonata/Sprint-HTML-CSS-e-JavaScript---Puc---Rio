@@ -118,7 +118,7 @@ function marteloBaixo() {
 }
 
 function marteloCima() {
-    document.getElementById('idGramado').style.cursor = 'url(../HTML/Imagens/Hammer.png), default';
+    document.getElementById('idGramado').style.cursor = 'url(../HTML/Imagens/hammer.png), default';
 }
 
 // Função para lidar com a martelada
