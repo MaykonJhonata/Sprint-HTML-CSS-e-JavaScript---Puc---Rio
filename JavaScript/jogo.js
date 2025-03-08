@@ -65,12 +65,12 @@ function sobeToupeira() {
     let objBuraco = document.getElementById('buraco' + buraco);
     if (!objBuraco) return;
 
-    objBuraco.src = '../HTML/imagens/hole-mole.png';
+    objBuraco.src = '../HTML/Imagens/hole-mole.png';
     toupeirasAtivas++;
 
     setTimeout(() => {
         if (objBuraco.src.includes('hole-mole')) {
-            objBuraco.src = '../HTML/imagens/hole.png';
+            objBuraco.src = '../HTML/Imagens/hole.png';
             perdidos++;
             mostraPontuacao();
         }
@@ -106,19 +106,19 @@ function mostraPontuacaoDe(display, valor) {
 
     console.log(`Atualizando visor: ${centena}${dezena}${unidade}`);
 
-    objUnidade.src = `../HTML/imagens/caractere_${unidade}.gif`;
-    objDezena.src = `../HTML/imagens/caractere_${dezena}.gif`;
-    objCentena.src = `../HTML/imagens/caractere_${centena}.gif`;
+    objUnidade.src = `../HTML/Imagens/caractere_${unidade}.gif`;
+    objDezena.src = `../HTML/Imagens/caractere_${dezena}.gif`;
+    objCentena.src = `../HTML/Imagens/caractere_${centena}.gif`;
 }
 
 
 // Animação do martelo
 function marteloBaixo() {
-    document.getElementById('idGramado').style.cursor = 'url(../HTML/imagens/hammerDown.png), default';
+    document.getElementById('idGramado').style.cursor = 'url(../HTML/Imagens/hammerDown.png), default';
 }
 
 function marteloCima() {
-    document.getElementById('idGramado').style.cursor = 'url(../HTML/imagens/Hammer.png), default';
+    document.getElementById('idGramado').style.cursor = 'url(../HTML/Imagens/Hammer.png), default';
 }
 
 // Função para lidar com a martelada
@@ -127,7 +127,7 @@ function martelada(evento) {
         errados += 1;
     } else {
         acertos += 1;
-        evento.target.src = '../HTML/imagens/hole.png';
+        evento.target.src = '../HTML/Imagens/hole.png';
         toupeirasAtivas--;
     }
     mostraPontuacao();
