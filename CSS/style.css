@@ -1,0 +1,278 @@
+body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.banner {
+    /*A classe da imagem da pág inicial chama banner */
+    height: 100vh;
+    /* toda altura do viewport */
+    padding: 0;
+    /*Sem distância para o elemento interno*/
+}
+
+.banner img {
+    position: absolute;
+    /* Posicionado de forma absoluta */
+    top: 0;
+    /* distância do topo */
+    left: 0;
+    /* distância da esquerda */
+    width: 100%;
+    /* largura */
+    height: 100%;
+    /* altura */
+    object-fit: cover;
+    /* Manter a proporção, cortar se necessário */
+}
+
+.nextPage {
+    position: fixed;
+    /* posicionado de forma fixa */
+    bottom: 10px;
+    /* distância da parte de baixo */
+    right: 10px;
+    /* distância do lado direito */
+    display: flex;
+    /*facilita o alinhamento vertical/horizontal */
+    align-items: center;
+    /* centraliza o conteúdo na vertical */
+    justify-content: center;
+    /* centraliza o conteúdo na horizontal */
+    z-index: 3;
+}
+
+.previousPage {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.circulo {
+    background-color: #cccccc;
+    /* cor de fundo da classe círculo */
+    border-radius: 50%;
+    /* torna o contêiner um círculo */
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.regras {
+    height: 100vh;
+    display: flex;
+    background-color: #d0d0d0;
+}
+
+.regras .contentBox {
+    width: 100%;
+    padding: 50px;
+    background-color: #c0c0c0;
+}
+
+.regras .imgBox {
+    width: 100%;
+    background: url(../HTML/Imagens/Mole.png);
+    /*url da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tabuleiro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00FF00;
+}
+
+.gramado {
+    width: 536px;
+    height: 536px;
+    background-color: #008000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /*permite quebrar a linha nos buracos */
+    cursor: url(../html/imagens/hammer.png), crosshair;
+    padding: 0px;
+}
+
+.gramado img {
+    padding: 25px 50px 25px 50px;
+    box-sizing: content-box;
+    /* incluído por causa do bootstrap */
+    width: 76px;
+    height: 61px;
+}
+
+.pontos {
+    width: 536px;
+    height: 536px;
+    display: flex;
+    justify-content: center;
+}
+
+.pontos th {
+    font-size: 50px;
+    font-family: 'Bungee Spice', sans-serif;
+    text-align: center;
+}
+
+.pontos td:first-child {
+    text-align: right;
+    font-size: 36px;
+    font-family: 'Bungee Spice', sans-serif;
+}
+
+#start {
+    width: 100%;
+    font-size: 36px;
+    border: 1px solid #000000
+}
+
+.records {
+    height: 100vh;
+    /* ocupa toda a área do viewport */
+    display: flex;
+    /* modo flex de alinhamento */
+    align-items: center;
+    /* centraliza na vertical */
+    justify-content: center;
+    /* centraliza na horizontal */
+}
+
+@font-face {
+    /* importando fonte uncial antiqua */
+    font-family: 'Uncial Antiqua';
+    src: url('../fonte/UncialAntiqua-Regular.otf') format('truetype');
+}
+
+
+.heading {
+    font-family: 'Uncial Antiqua', serif;
+    color: #084d6e;
+    text-align: center;
+    font-size: 56px;
+
+}
+
+.records table {
+    border-collapse: collapse;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.records th {
+    background-color: #000000;
+    /* cor de fundo */
+    color: #ffffff;
+    /* cor da letra */
+    text-align: center;
+    /* texto centralizado*/
+    font-size: 36px;
+    /* tamanho da fonte */
+    padding-left: 30px;
+    /*espaço a Esquerda */
+    padding-right: 30px;
+    /*espaço a direita */
+
+}
+
+.records td {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 30px;
+}
+
+.records tr:nth-child(even) {
+    /*seleciona todas as linhas pares, para melhor visualização */
+    background-color: #c0c0c0
+}
+
+.records td:first-child,
+td:nth-child(3) {
+    /* seleciona a 1a e a 3a coluna */
+    text-align: right;
+    /* alinha a direita */
+}
+
+.records td:last-child {
+    /* seleciona a coluna de datas */
+    text-align: center;
+    /* centraliza */
+}
+
+/* aplicando responsividade */
+@media(max-width: 99px) {
+
+    /*regras */
+    .regras {
+        flex-direction: column;
+    }
+
+    .regras .contentBox {
+        width: unset;
+    }
+
+    .regras .imgBox {
+        height: 100%
+    }
+
+    /* tabuleiro responsivo */
+    .tabuleiro {
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+    .pontos th {
+        font-size: 30px;
+    }
+
+    .pontos td:first-child {
+        font-size: 20px;
+    }
+
+    .pontos {
+        width: 400px;
+        height: 400px;
+    }
+
+    .gramado {
+        width: 400px;
+        height: 400px;
+    }
+
+    .gramado img {
+        padding: 10px 30px 10px 30px;
+    }
+
+    /*records*/
+    .records tr th {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .records th {
+        font-size: 18px;
+    }
+
+    .records td {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+}
